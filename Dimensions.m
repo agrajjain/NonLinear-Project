@@ -1,5 +1,5 @@
-%Store all constants related to the robot.
-
+% Store all constants related to the robot.
+% All Numbers in MKS units
 %-------------------Platform-----------------------
 m   = 5;   %Mass of the platform
 Ic  = 1.66;    %Moment of Inertia aroung Center
