@@ -14,4 +14,4 @@ l1  = 0.3;  %Length of link 1
 l2  =0.3;   %Length of link 2
 
 
-lv  = 1;    %Distance of point of attachment of the manipulator from center
+lv  = 2;    %Distance of point of attachment of the manipulator from center

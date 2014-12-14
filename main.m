@@ -4,4 +4,5 @@ x_init=Initialize();
 
 [t,x]=ode45('ode_func',[0 10],x_init);
 
+%plot(t,x(:,6))
 Visualizer(t,x)

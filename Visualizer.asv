@@ -21,12 +21,12 @@ for n = 1:length(t)
     Dimensions
     th=(r/(2*b))*(x(n,3)-x(n,4));
     pose=[x(n,1) x(n,2) th];
-    manip=[x(n,5) x(n,6)];
+    manipulator_config=[
 %     T = [cos(th),-sin(th), x(n,1);
 %          sin(th), cos(th), x(n,2);
 %            0,        0,     1];
 %        
-    plotRobot(pose,manip, 'k');
+    plotRobot(pose, r_diameter, HEADING_LENGTH, 'k');
     xlabel('X axis');
     ylabel('Y axis');
     text(-max_dim,max_dim + 0.5,['t: ',num2str(t(n))]);
