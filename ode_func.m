@@ -1,6 +1,6 @@
 function [ x_dot ] = ode_func( t,x )
 
-tau=[1,0,0,0]';
+tau=[0,0,-10,0]';
 x_dot=SYSTEM(x,tau);
 
 end

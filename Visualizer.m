@@ -3,12 +3,10 @@ function Visualizer( t,x )
 %   Plot robot and arena
 
 %Visualizer Parameters
-max_dim = 40; %Overall Arena Dimension 
-HEADING_LENGTH = 2.5; %Length of Heading indicator
-r_diameter = 5; %Diameter of robot symbol
+max_dim = 5; %Overall Arena Dimension 
 
 
-axis([-max_dim - 0.2, max_dim + 50, -max_dim - 0.2, max_dim + 50])
+axis([-max_dim - 0.2, max_dim + 0.2, -max_dim - 0.2, max_dim + 0.2])
 axis square
 
 hold all
@@ -26,7 +24,7 @@ for n = 1:length(t)
 %          sin(th), cos(th), x(n,2);
 %            0,        0,     1];
 %        
-    plotRobot(pose,manip, 'k');
+    plotRobot(pose,manip,'k');
     xlabel('X axis');
     ylabel('Y axis');
     text(-max_dim,max_dim + 0.5,['t: ',num2str(t(n))]);
