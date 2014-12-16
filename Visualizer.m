@@ -3,7 +3,7 @@ function Visualizer( t,x )
 %   Plot robot and arena
 
 %Visualizer Parameters
-max_dim = 5; %Overall Arena Dimension 
+max_dim = 10; %Overall Arena Dimension 
 
 
 axis([-max_dim - 0.2, max_dim + 0.2, -max_dim - 0.2, max_dim + 0.2])
@@ -17,13 +17,9 @@ for n = 1:length(t)
     %%% PLOT ROBOT %%%
     % Robot Transformation Matrix
     Dimensions
-    th=(r/(2*b))*(x(n,3)-x(n,4));
-    pose=[x(n,1) x(n,2) th];
+    phi=(r/(2*b))*(x(n,3)-x(n,4));
+    pose=[x(n,1) x(n,2) phi];
     manip=[x(n,5) x(n,6)];
-%     T = [cos(th),-sin(th), x(n,1);
-%          sin(th), cos(th), x(n,2);
-%            0,        0,     1];
-%        
     plotRobot(pose,manip,'k');
     xlabel('X axis');
     ylabel('Y axis');

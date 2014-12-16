@@ -2,7 +2,7 @@ function plotRobot(pose,arm, color)
 
 %Load Robot Dimensions
 Dimensions
-
+lv=2;
 %Calculate Transformation matrices
 T1 =[ cos(arm(1) + pose(3)), -sin(arm(1) + pose(3)), pose(1) + l1*cos(arm(1) + pose(3)) + (lv*cos(pose(3)))/2; sin(arm(1) + pose(3)),  cos(arm(1) + pose(3)), pose(2) + l1*sin(arm(1) + pose(3)) + (lv*sin(pose(3)))/2;                                0,                                 0,                                                                             1];
  
@@ -11,10 +11,10 @@ T2 =[ cos(arm(1) + arm(2) + pose(3)), -sin(arm(1) + arm(2) + pose(3)), pose(1) +
 Tv =[ cos(pose(3)), -sin(pose(3)), pose(1) + (lv*cos(pose(3)))/2; sin(pose(3)),  cos(pose(3)), pose(2) + (lv*sin(pose(3)))/2;                          0,                           0,                                       1];
 
 %Vertices for platform
-ver1=Tv*[0;b;1];
-ver2=Tv*[0;-b;1];
-ver3=Tv*[-lv;-b;1];
-ver4=Tv*[-lv;b;1];
+ver1=Tv*[lv/2;b;1];
+ver2=Tv*[lv/2;-b;1];
+ver3=Tv*[-lv/2;-b;1];
+ver4=Tv*[-lv/2;b;1];
 
 %Plot platform
 plot(...
