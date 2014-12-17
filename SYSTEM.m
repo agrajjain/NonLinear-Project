@@ -1,4 +1,4 @@
-function [ xDot ] = SYSTEM( x,tau )
+function [ xDot ] = SYSTEM( x,tau,m2 )
 %SYSTEM Mobile Manipulator Dynamics
 %   Dynamics of the complete mobile manipulator with no feedback
 %   linearization.

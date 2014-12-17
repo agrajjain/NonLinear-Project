@@ -10,7 +10,7 @@ lv  = 0;    %Length of Platform
 
 %------------------Manipulator---------------------
 m1  = 0.1;    %Mass of link 1
-m2  = 0.1;    %Mass of link 2
+%m2  = 0.1;    %Mass of link 2
 l1  = 1;  %Length of link 1
 l2  =1.6;   %Length of link 2
 

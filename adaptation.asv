@@ -1,0 +1,10 @@
+function [ m_new ] = adaptation( t,x,tau,x_dot,m_old )
+
+m_new=m_old;
+
+xd_exp=SYSTEM(x,tau,m_old);
+error=x
+
+
+end
+

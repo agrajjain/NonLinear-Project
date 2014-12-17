@@ -1,0 +1,13 @@
+function [ x_dot ] = ode_func( t,x )
+
+persistant m
+
+tau=controller(t,x,m_new);
+
+m_actual=2;
+x_dot=SYSTEM(x,tau,m_actual);
+
+
+
+end
+

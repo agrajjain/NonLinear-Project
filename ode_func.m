@@ -1,24 +1,16 @@
 function [ x_dot ] = ode_func( t,x )
 
-%Outputs
- y=out(x);
- yDot=outDer(x);
+persistent mass2
+if(isempty(mass2))
+	mass2 = 0.1;
+end
 
-%Reference
-[yR,yDotR,yDDotR]=Reference(t);
+tau=controller(t,x,mass2);
 
+m_actual=1;
+x_dot=SYSTEM(x,tau,m_actual);
 
-%Controller
- v=staticFeedback(y, yDot, yR, yDotR, yDDotR);
- %v=[0;0;0;0];
- u=feedback2(x,v);
- %u=[0;0;0;0];
- tau=feedback1(x,u);
-
-%tau(3)=0;
-%tau(4)=0;
-%tau=[0,0,1,0]';
-x_dot=SYSTEM(x,tau);
+mass2=adaptation(x,tau,x_dot,mass2)
 
 end
 
